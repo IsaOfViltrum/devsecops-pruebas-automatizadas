@@ -35,7 +35,7 @@ pipeline {
 
         stage('Security Test') {
             steps {
-                dependencyCheck additionalArguments: '--scan . --format ALL --out dependency-check-report', odcInstallation: 'Dependency-Check-12.2.2'
+               dependencyCheck additionalArguments: '--scan . --enableExperimental --format ALL --out dependency-check-report', odcInstallation: 'Dependency-Check-12.2.2'
 
                 dependencyCheckPublisher pattern: 'dependency-check-report/dependency-check-report.xml'
             }
