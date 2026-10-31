@@ -23,7 +23,7 @@ pipeline {
                     withSonarQubeEnv('SonarQube') {
                         sh """
                             ${scannerHome}/bin/sonar-scanner \
-                            -Dsonar.projectKey=proyecto-devsecops \
+                            -Dsonar.projectKey=Proyecto-DevSecOps \
                             -Dsonar.projectName='Proyecto DevSecOps' \
                             -Dsonar.sources=. \
                             -Dsonar.sourceEncoding=UTF-8
