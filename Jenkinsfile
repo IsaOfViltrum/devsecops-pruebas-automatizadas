@@ -35,7 +35,9 @@ pipeline {
 
         stage('Security Test') {
             steps {
-                echo 'Preparando los analisis de seguridad con OWASP...'
+                dependencyCheck additionalArguments: '--scan . --format HTML --out dependency-check-report', odcInstallation: 'Dependency-Check'
+
+                dependencyCheckPublisher pattern: 'dependency-check-report/dependency-check-report.xml'
             }
         }
 
